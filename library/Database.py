@@ -22,7 +22,7 @@ class Database:
         return df
     
     def disconnect(self):
-        pass
+        self.conn.close()
 
     def fetch(self):
         pass
@@ -30,3 +30,5 @@ class Database:
 db= Database("DWBI")
 table = db.execute_query("SELECT * FROM STUDENT")
 print(table.head())
+table.to_csv("student.csv",index= False)
+db.disconnect()
