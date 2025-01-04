@@ -11,7 +11,8 @@ try:
     df = db.ext_to_file("Products")
 
     # Load CSV data into OLAP staging table
-    stg_table = db.load_to_stg("D:/DWBI_Practical/data_output.csv")
+    stg_table = db.load_to_stg("D:/DWBI_Practical/products.csv")
+    print("Loaded in the staging table.")
     
 except Exception as e:
      print(f"An error occurred: {e}") 

@@ -39,8 +39,8 @@ class Database:
         columns = [desc[0] for desc in self.cursor.description]
         # Convert the fetched data to a pandas DataFrame with column names
         df = pd.DataFrame(data, columns=columns)
-        df.to_csv("data_output.csv", index=False)
-        self.logger.log_info("Data exported to data_output.csv")
+        df.to_csv("products.csv", index=False)
+        self.logger.log_info("Data exported to products.csv")
         return df
         
     def fetchall(self):
@@ -74,6 +74,7 @@ class Database:
             """
             self.cursor.execute(select_query)
             self.commit()
+            self.logger.log_info(select_query)
             self.logger.log_info("Data loaded successfully into the staging table.")
         except mysql.connector.Error as e:
             self.logger.log_error(f"Error loading data: {e}")
