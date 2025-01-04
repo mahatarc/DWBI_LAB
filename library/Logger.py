@@ -1,5 +1,5 @@
 import logging
-from Variables import Variables
+from .Variables import Variables
 import os
 import  datetime
 

@@ -1,0 +1,8 @@
+2025-01-04 19:58:12,826 - product.py_2025-01-04_19-58-12.log - INFO - Successfully connected to MySQL!
+2025-01-04 19:58:12,828 - product.py_2025-01-04_19-58-12.log - INFO - 
+              SELECT * from OLTP_ARCHA.Products
+        
+2025-01-04 19:58:12,829 - product.py_2025-01-04_19-58-12.log - INFO - Fetched all results.
+2025-01-04 19:58:12,833 - product.py_2025-01-04_19-58-12.log - INFO - Data exported to data_output.csv
+2025-01-04 19:58:12,854 - product.py_2025-01-04_19-58-12.log - INFO - Data loaded successfully into the staging table.
+2025-01-04 19:58:12,854 - product.py_2025-01-04_19-58-12.log - INFO - Connection closed.

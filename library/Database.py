@@ -1,7 +1,7 @@
 import mysql.connector
 import pandas as pd
-from Variables import Variables
-from Logger import Logger
+from .Variables import Variables
+from .Logger import Logger
 
 class Database:
 

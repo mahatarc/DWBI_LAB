@@ -1,9 +1,6 @@
 import json
 #import Logger
 class Variables:
-    #def __init__(self,variable_name):
-     #   self.path = "D:\DWBI_Practical\config\config.cfg"
-      #  self.name = variable_name
         
     @staticmethod
     def  get_variable(name):
