@@ -1,7 +1,0 @@
-2025-01-04 18:54:51,669 - database_log_2025-01-04_18-54-51.log - INFO - Successfully connected to MySQL!
-2025-01-04 18:54:51,669 - database_log_2025-01-04_18-54-51.log - INFO - 
-            SELECT * from Products
-        
-2025-01-04 18:54:51,674 - database_log_2025-01-04_18-54-51.log - INFO - Data exported to data_output.csv
-2025-01-04 18:54:51,682 - database_log_2025-01-04_18-54-51.log - INFO - Data loaded successfully into the staging table.
-2025-01-04 18:54:51,682 - database_log_2025-01-04_18-54-51.log - INFO - Connection closed.
