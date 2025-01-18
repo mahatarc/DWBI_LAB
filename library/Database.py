@@ -22,14 +22,14 @@ class Database:
             self.logger.log_error(f"Error connecting to MySQL: {e}")
 
     def get_table_names(self):
-        """
-        Fetches all table names from the source database.
-
-        :return: List of table names.
-        """
         try:
             src_db = Variables.get_variable('SRC_DB')
-            query = f"SHOW TABLES FROM {src_db}"
+            query = f"""
+                SELECT TABLE_NAME
+                FROM information_schema.tables
+                WHERE table_schema = '{src_db}'
+                ORDER BY CREATE_TIME;
+            """
             self.execute_query(query)
             table_names = [row[0] for row in self.fetchall()]
             self.logger.log_info(f"Tables found: {table_names}")
