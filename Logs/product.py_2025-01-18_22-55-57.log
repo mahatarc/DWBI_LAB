@@ -1,0 +1,15 @@
+2025-01-18 22:55:57,053 - product.py_2025-01-18_22-55-57.log - INFO - Successfully connected to MySQL!
+2025-01-18 22:55:57,053 - product.py_2025-01-18_22-55-57.log - INFO - SHOW TABLES FROM OLTP_ARCHANA
+2025-01-18 22:55:57,053 - product.py_2025-01-18_22-55-57.log - INFO - Fetched all results.
+2025-01-18 22:55:57,053 - product.py_2025-01-18_22-55-57.log - INFO - Tables found: ['category', 'country', 'customer', 'product', 'region', 'sales', 'store', 'subcategory']
+2025-01-18 22:55:57,053 - product.py_2025-01-18_22-55-57.log - INFO - 
+            LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/PRODUCT.csv'
+            INTO TABLE OLAP_ARCHANA_STG.PRODUCT
+            FIELDS TERMINATED BY ','  
+            ENCLOSED BY '"'           
+            LINES TERMINATED BY '
+'  
+            IGNORE 1 LINES;
+            
+2025-01-18 22:55:57,053 - product.py_2025-01-18_22-55-57.log - INFO - Data loaded successfully into the staging table.
+2025-01-18 22:55:57,053 - product.py_2025-01-18_22-55-57.log - INFO - Connection closed.

@@ -7,24 +7,23 @@ try:
     db = Database(file_name)
     print("Connected to the database.")
 
-    # Extract data from OLTP to CSV
-    df = db.ext_to_file("Products")
+    # Fetch all table names dynamically
+    table_names = db.get_table_names()
 
-    # Load CSV data into OLAP staging table
-    stg_table = db.load_to_stg("D:/DWBI_Practical/products.csv")
-    print("Loaded in the staging table.")
+    # Extract data from OLTP to CSV for each table
+    for table_name in table_names:
+        db.ext_to_file(table_name)
+        print(f"Data extracted to CSV for table: {table_name}")
+        
+        # Load CSV data into OLAP staging table for each table
+        db.load_to_stg(table_name)
+        print(f"Loaded table '{table_name}' into the staging table.")
     
 except Exception as e:
-     print(f"An error occurred: {e}") 
+    print(f"An error occurred: {e}") 
+
 finally:
     try:
         db.disconnect()
     except Exception as e:
         print(f"Failed to disconnect: {e}")
-    
-# OLAP _<Fname> STG/TMP/TGT
-# OLTP_ <Fname> SRC-> Product
-
-
-
-

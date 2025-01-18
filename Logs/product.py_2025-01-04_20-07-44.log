@@ -1,8 +1,0 @@
-2025-01-04 20:07:44,654 - product.py_2025-01-04_20-07-44.log - INFO - Successfully connected to MySQL!
-2025-01-04 20:07:44,654 - product.py_2025-01-04_20-07-44.log - INFO - 
-              SELECT * from OLTP_ARCHA.Products
-        
-2025-01-04 20:07:44,654 - product.py_2025-01-04_20-07-44.log - INFO - Fetched all results.
-2025-01-04 20:07:44,664 - product.py_2025-01-04_20-07-44.log - INFO - Data exported to products.csv
-2025-01-04 20:07:44,664 - product.py_2025-01-04_20-07-44.log - ERROR - Error loading data: 1146 (42S02): Table 'olap_archa.products_staging' doesn't exist
-2025-01-04 20:07:44,664 - product.py_2025-01-04_20-07-44.log - INFO - Connection closed.

@@ -1,8 +1,0 @@
-2025-01-04 20:09:02,910 - product.py_2025-01-04_20-09-02.log - INFO - Successfully connected to MySQL!
-2025-01-04 20:09:02,910 - product.py_2025-01-04_20-09-02.log - INFO - 
-              SELECT * from OLTP_ARCHA.Products
-        
-2025-01-04 20:09:02,924 - product.py_2025-01-04_20-09-02.log - INFO - Fetched all results.
-2025-01-04 20:09:02,929 - product.py_2025-01-04_20-09-02.log - INFO - Data exported to products.csv
-2025-01-04 20:09:02,930 - product.py_2025-01-04_20-09-02.log - ERROR - Error loading data: 2 (HY000): File 'D:\DWBI_Practical\data_output.csv' not found (OS errno 2 - No such file or directory)
-2025-01-04 20:09:02,930 - product.py_2025-01-04_20-09-02.log - INFO - Connection closed.
