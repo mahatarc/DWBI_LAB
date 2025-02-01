@@ -1,0 +1,202 @@
+2025-02-01 22:12:54,798 - main.py_2025-02-01_22-12-54.log - INFO - Successfully connected to MySQL!
+2025-02-01 22:12:54,799 - main.py_2025-02-01_22-12-54.log - INFO - 
+                SELECT TABLE_NAME
+                FROM information_schema.tables
+                WHERE table_schema = 'OLTP_ARCHANA'
+                ORDER BY CREATE_TIME;
+            
+2025-02-01 22:12:54,802 - main.py_2025-02-01_22-12-54.log - INFO - Fetched all results.
+2025-02-01 22:12:54,802 - main.py_2025-02-01_22-12-54.log - INFO - Tables found: ['category', 'country', 'customer', 'subcategory', 'product', 'region', 'store', 'sales']
+2025-02-01 22:12:54,802 - main.py_2025-02-01_22-12-54.log - INFO - 
+              SELECT * from OLTP_ARCHANA.category
+        
+2025-02-01 22:12:54,804 - main.py_2025-02-01_22-12-54.log - INFO - Fetched all results.
+2025-02-01 22:12:54,807 - main.py_2025-02-01_22-12-54.log - INFO - Data exported to products.csv
+2025-02-01 22:12:54,807 - main.py_2025-02-01_22-12-54.log - INFO - 
+            LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/category.csv'
+            INTO TABLE OLAP_ARCHANA_STG.category
+            FIELDS TERMINATED BY ','  
+            ENCLOSED BY '"'           
+            LINES TERMINATED BY '
+'  
+            IGNORE 1 LINES;
+            
+2025-02-01 22:12:54,809 - main.py_2025-02-01_22-12-54.log - ERROR - Error loading data: 1062 (23000): Duplicate entry '1' for key 'category.PRIMARY'
+2025-02-01 22:12:54,810 - main.py_2025-02-01_22-12-54.log - INFO - SET FOREIGN_KEY_CHECKS =0;
+2025-02-01 22:12:54,810 - main.py_2025-02-01_22-12-54.log - INFO -             
+            TRUNCATE TABLE OLAP_ARCHANA_TEMP.category;
+        
+2025-02-01 22:12:54,836 - main.py_2025-02-01_22-12-54.log - INFO - 
+            INSERT INTO OLAP_ARCHANA_TEMP.category
+            SELECT * FROM OLAP_ARCHANA_STG.category;
+        
+2025-02-01 22:12:54,839 - main.py_2025-02-01_22-12-54.log - INFO - SET FOREIGN_KEY_CHECKS = 1;
+2025-02-01 22:12:54,839 - main.py_2025-02-01_22-12-54.log - INFO - 
+              SELECT * from OLTP_ARCHANA.country
+        
+2025-02-01 22:12:54,840 - main.py_2025-02-01_22-12-54.log - INFO - Fetched all results.
+2025-02-01 22:12:54,841 - main.py_2025-02-01_22-12-54.log - INFO - Data exported to products.csv
+2025-02-01 22:12:54,842 - main.py_2025-02-01_22-12-54.log - INFO - 
+            LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/country.csv'
+            INTO TABLE OLAP_ARCHANA_STG.country
+            FIELDS TERMINATED BY ','  
+            ENCLOSED BY '"'           
+            LINES TERMINATED BY '
+'  
+            IGNORE 1 LINES;
+            
+2025-02-01 22:12:54,844 - main.py_2025-02-01_22-12-54.log - ERROR - Error loading data: 1062 (23000): Duplicate entry '1' for key 'country.PRIMARY'
+2025-02-01 22:12:54,844 - main.py_2025-02-01_22-12-54.log - INFO - SET FOREIGN_KEY_CHECKS =0;
+2025-02-01 22:12:54,845 - main.py_2025-02-01_22-12-54.log - INFO -             
+            TRUNCATE TABLE OLAP_ARCHANA_TEMP.country;
+        
+2025-02-01 22:12:54,868 - main.py_2025-02-01_22-12-54.log - INFO - 
+            INSERT INTO OLAP_ARCHANA_TEMP.country
+            SELECT * FROM OLAP_ARCHANA_STG.country;
+        
+2025-02-01 22:12:54,869 - main.py_2025-02-01_22-12-54.log - INFO - SET FOREIGN_KEY_CHECKS = 1;
+2025-02-01 22:12:54,869 - main.py_2025-02-01_22-12-54.log - INFO - 
+              SELECT * from OLTP_ARCHANA.customer
+        
+2025-02-01 22:12:54,870 - main.py_2025-02-01_22-12-54.log - INFO - Fetched all results.
+2025-02-01 22:12:54,871 - main.py_2025-02-01_22-12-54.log - INFO - Data exported to products.csv
+2025-02-01 22:12:54,872 - main.py_2025-02-01_22-12-54.log - INFO - 
+            LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/customer.csv'
+            INTO TABLE OLAP_ARCHANA_STG.customer
+            FIELDS TERMINATED BY ','  
+            ENCLOSED BY '"'           
+            LINES TERMINATED BY '
+'  
+            IGNORE 1 LINES;
+            
+2025-02-01 22:12:54,880 - main.py_2025-02-01_22-12-54.log - ERROR - Error loading data: 1062 (23000): Duplicate entry '1' for key 'customer.PRIMARY'
+2025-02-01 22:12:54,881 - main.py_2025-02-01_22-12-54.log - INFO - SET FOREIGN_KEY_CHECKS =0;
+2025-02-01 22:12:54,881 - main.py_2025-02-01_22-12-54.log - INFO -             
+            TRUNCATE TABLE OLAP_ARCHANA_TEMP.customer;
+        
+2025-02-01 22:12:54,906 - main.py_2025-02-01_22-12-54.log - INFO - 
+            INSERT INTO OLAP_ARCHANA_TEMP.customer
+            SELECT * FROM OLAP_ARCHANA_STG.customer;
+        
+2025-02-01 22:12:54,907 - main.py_2025-02-01_22-12-54.log - INFO - SET FOREIGN_KEY_CHECKS = 1;
+2025-02-01 22:12:54,908 - main.py_2025-02-01_22-12-54.log - INFO - 
+              SELECT * from OLTP_ARCHANA.subcategory
+        
+2025-02-01 22:12:54,908 - main.py_2025-02-01_22-12-54.log - INFO - Fetched all results.
+2025-02-01 22:12:54,910 - main.py_2025-02-01_22-12-54.log - INFO - Data exported to products.csv
+2025-02-01 22:12:54,910 - main.py_2025-02-01_22-12-54.log - INFO - 
+            LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/subcategory.csv'
+            INTO TABLE OLAP_ARCHANA_STG.subcategory
+            FIELDS TERMINATED BY ','  
+            ENCLOSED BY '"'           
+            LINES TERMINATED BY '
+'  
+            IGNORE 1 LINES;
+            
+2025-02-01 22:12:54,917 - main.py_2025-02-01_22-12-54.log - ERROR - Error loading data: 1062 (23000): Duplicate entry '1' for key 'subcategory.PRIMARY'
+2025-02-01 22:12:54,918 - main.py_2025-02-01_22-12-54.log - INFO - SET FOREIGN_KEY_CHECKS =0;
+2025-02-01 22:12:54,918 - main.py_2025-02-01_22-12-54.log - INFO -             
+            TRUNCATE TABLE OLAP_ARCHANA_TEMP.subcategory;
+        
+2025-02-01 22:12:54,957 - main.py_2025-02-01_22-12-54.log - INFO - 
+            INSERT INTO OLAP_ARCHANA_TEMP.subcategory
+            SELECT * FROM OLAP_ARCHANA_STG.subcategory;
+        
+2025-02-01 22:12:54,959 - main.py_2025-02-01_22-12-54.log - INFO - SET FOREIGN_KEY_CHECKS = 1;
+2025-02-01 22:12:54,959 - main.py_2025-02-01_22-12-54.log - INFO - 
+              SELECT * from OLTP_ARCHANA.product
+        
+2025-02-01 22:12:54,959 - main.py_2025-02-01_22-12-54.log - INFO - Fetched all results.
+2025-02-01 22:12:54,962 - main.py_2025-02-01_22-12-54.log - INFO - Data exported to products.csv
+2025-02-01 22:12:54,962 - main.py_2025-02-01_22-12-54.log - INFO - 
+            LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/product.csv'
+            INTO TABLE OLAP_ARCHANA_STG.product
+            FIELDS TERMINATED BY ','  
+            ENCLOSED BY '"'           
+            LINES TERMINATED BY '
+'  
+            IGNORE 1 LINES;
+            
+2025-02-01 22:12:54,963 - main.py_2025-02-01_22-12-54.log - ERROR - Error loading data: 1062 (23000): Duplicate entry '1' for key 'product.PRIMARY'
+2025-02-01 22:12:54,964 - main.py_2025-02-01_22-12-54.log - INFO - SET FOREIGN_KEY_CHECKS =0;
+2025-02-01 22:12:54,964 - main.py_2025-02-01_22-12-54.log - INFO -             
+            TRUNCATE TABLE OLAP_ARCHANA_TEMP.product;
+        
+2025-02-01 22:12:54,991 - main.py_2025-02-01_22-12-54.log - INFO - 
+            INSERT INTO OLAP_ARCHANA_TEMP.product
+            SELECT * FROM OLAP_ARCHANA_STG.product;
+        
+2025-02-01 22:12:54,992 - main.py_2025-02-01_22-12-54.log - INFO - SET FOREIGN_KEY_CHECKS = 1;
+2025-02-01 22:12:54,993 - main.py_2025-02-01_22-12-54.log - INFO - 
+              SELECT * from OLTP_ARCHANA.region
+        
+2025-02-01 22:12:54,993 - main.py_2025-02-01_22-12-54.log - INFO - Fetched all results.
+2025-02-01 22:12:54,994 - main.py_2025-02-01_22-12-54.log - INFO - Data exported to products.csv
+2025-02-01 22:12:54,995 - main.py_2025-02-01_22-12-54.log - INFO - 
+            LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/region.csv'
+            INTO TABLE OLAP_ARCHANA_STG.region
+            FIELDS TERMINATED BY ','  
+            ENCLOSED BY '"'           
+            LINES TERMINATED BY '
+'  
+            IGNORE 1 LINES;
+            
+2025-02-01 22:12:54,996 - main.py_2025-02-01_22-12-54.log - ERROR - Error loading data: 1062 (23000): Duplicate entry '1' for key 'region.PRIMARY'
+2025-02-01 22:12:54,996 - main.py_2025-02-01_22-12-54.log - INFO - SET FOREIGN_KEY_CHECKS =0;
+2025-02-01 22:12:54,997 - main.py_2025-02-01_22-12-54.log - INFO -             
+            TRUNCATE TABLE OLAP_ARCHANA_TEMP.region;
+        
+2025-02-01 22:12:55,027 - main.py_2025-02-01_22-12-54.log - INFO - 
+            INSERT INTO OLAP_ARCHANA_TEMP.region
+            SELECT * FROM OLAP_ARCHANA_STG.region;
+        
+2025-02-01 22:12:55,028 - main.py_2025-02-01_22-12-54.log - INFO - SET FOREIGN_KEY_CHECKS = 1;
+2025-02-01 22:12:55,028 - main.py_2025-02-01_22-12-54.log - INFO - 
+              SELECT * from OLTP_ARCHANA.store
+        
+2025-02-01 22:12:55,029 - main.py_2025-02-01_22-12-54.log - INFO - Fetched all results.
+2025-02-01 22:12:55,030 - main.py_2025-02-01_22-12-54.log - INFO - Data exported to products.csv
+2025-02-01 22:12:55,030 - main.py_2025-02-01_22-12-54.log - INFO - 
+            LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/store.csv'
+            INTO TABLE OLAP_ARCHANA_STG.store
+            FIELDS TERMINATED BY ','  
+            ENCLOSED BY '"'           
+            LINES TERMINATED BY '
+'  
+            IGNORE 1 LINES;
+            
+2025-02-01 22:12:55,032 - main.py_2025-02-01_22-12-54.log - ERROR - Error loading data: 1062 (23000): Duplicate entry '1' for key 'store.PRIMARY'
+2025-02-01 22:12:55,033 - main.py_2025-02-01_22-12-54.log - INFO - SET FOREIGN_KEY_CHECKS =0;
+2025-02-01 22:12:55,033 - main.py_2025-02-01_22-12-54.log - INFO -             
+            TRUNCATE TABLE OLAP_ARCHANA_TEMP.store;
+        
+2025-02-01 22:12:55,067 - main.py_2025-02-01_22-12-54.log - INFO - 
+            INSERT INTO OLAP_ARCHANA_TEMP.store
+            SELECT * FROM OLAP_ARCHANA_STG.store;
+        
+2025-02-01 22:12:55,068 - main.py_2025-02-01_22-12-54.log - INFO - SET FOREIGN_KEY_CHECKS = 1;
+2025-02-01 22:12:55,068 - main.py_2025-02-01_22-12-54.log - INFO - 
+              SELECT * from OLTP_ARCHANA.sales
+        
+2025-02-01 22:12:55,069 - main.py_2025-02-01_22-12-54.log - INFO - Fetched all results.
+2025-02-01 22:12:55,071 - main.py_2025-02-01_22-12-54.log - INFO - Data exported to products.csv
+2025-02-01 22:12:55,071 - main.py_2025-02-01_22-12-54.log - INFO - 
+            LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/sales.csv'
+            INTO TABLE OLAP_ARCHANA_STG.sales
+            FIELDS TERMINATED BY ','  
+            ENCLOSED BY '"'           
+            LINES TERMINATED BY '
+'  
+            IGNORE 1 LINES;
+            
+2025-02-01 22:12:55,079 - main.py_2025-02-01_22-12-54.log - INFO - Data loaded successfully into the staging table.
+2025-02-01 22:12:55,080 - main.py_2025-02-01_22-12-54.log - INFO - SET FOREIGN_KEY_CHECKS =0;
+2025-02-01 22:12:55,080 - main.py_2025-02-01_22-12-54.log - INFO -             
+            TRUNCATE TABLE OLAP_ARCHANA_TEMP.sales;
+        
+2025-02-01 22:12:55,120 - main.py_2025-02-01_22-12-54.log - INFO - 
+            INSERT INTO OLAP_ARCHANA_TEMP.sales
+            SELECT * FROM OLAP_ARCHANA_STG.sales;
+        
+2025-02-01 22:13:04,205 - main.py_2025-02-01_22-12-54.log - INFO - SET FOREIGN_KEY_CHECKS = 1;
+2025-02-01 22:13:04,206 - main.py_2025-02-01_22-12-54.log - INFO - Connection closed.

@@ -92,7 +92,23 @@ class Database:
             self.logger.log_info("Data loaded successfully into the staging table.")
         except mysql.connector.Error as e:
             self.logger.log_error(f"Error loading data: {e}")
-    
+            
+    def stg_to_temp(self,table_name):
+        TEMP_DB=Variables.get_variable('TEMP_DB')
+        STG_DB= Variables.get_variable('STG_DB')
+        self.execute_query("SET FOREIGN_KEY_CHECKS =0;")
+        truncate_query = f"""            
+            TRUNCATE TABLE {TEMP_DB}.{table_name};
+        """
+        self.execute_query(truncate_query)
+        insert_query = f"""
+            INSERT INTO {TEMP_DB}.{table_name}
+            SELECT * FROM {STG_DB}.{table_name};
+        """
+        self.execute_query(insert_query)
+        self.execute_query("SET FOREIGN_KEY_CHECKS = 1;")
+        
+        
     def commit(self):
         self.connection.commit()
 
