@@ -40,6 +40,7 @@ class Database:
     def execute_query(self,select_query):  #for select only
         self.logger.log_info(select_query)
         self.cursor.execute(select_query)
+        self.connection.commit()
     
     def ext_to_file(self,table_name):
         #OLTP database
@@ -88,7 +89,7 @@ class Database:
             """
             self.logger.log_info(select_query)
             self.cursor.execute(select_query)
-            self.commit()
+            # self.commit()
             self.logger.log_info("Data loaded successfully into the staging table.")
         except mysql.connector.Error as e:
             self.logger.log_error(f"Error loading data: {e}")
@@ -106,9 +107,8 @@ class Database:
             SELECT * FROM {STG_DB}.{table_name};
         """
         self.execute_query(insert_query)
-        self.execute_query("SET FOREIGN_KEY_CHECKS = 1;")
-        
-        
+       
+         
     def commit(self):
         self.connection.commit()
 

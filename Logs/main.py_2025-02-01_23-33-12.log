@@ -1,0 +1,145 @@
+2025-02-01 23:33:12,333 - main.py_2025-02-01_23-33-12.log - INFO - Successfully connected to MySQL!
+2025-02-01 23:33:12,334 - main.py_2025-02-01_23-33-12.log - INFO - 
+                SELECT TABLE_NAME
+                FROM information_schema.tables
+                WHERE table_schema = 'OLTP_ARCHANA'
+                ORDER BY CREATE_TIME;
+            
+2025-02-01 23:33:12,336 - main.py_2025-02-01_23-33-12.log - INFO - Fetched all results.
+2025-02-01 23:33:12,336 - main.py_2025-02-01_23-33-12.log - INFO - Tables found: ['category', 'country', 'customer', 'subcategory', 'product', 'region', 'store', 'sales']
+2025-02-01 23:33:12,344 - main.py_2025-02-01_23-33-12.log - INFO - Successfully connected to MySQL!
+2025-02-01 23:33:12,344 - main.py_2025-02-01_23-33-12.log - INFO - Successfully connected to MySQL!
+2025-02-01 23:33:12,346 - main.py_2025-02-01_23-33-12.log - INFO - SET FOREIGN_KEY_CHECKS =0;
+2025-02-01 23:33:12,346 - main.py_2025-02-01_23-33-12.log - INFO - SET FOREIGN_KEY_CHECKS =0;
+2025-02-01 23:33:12,346 - main.py_2025-02-01_23-33-12.log - INFO -             
+            TRUNCATE TABLE OLAP_ARCHANA_TEMP.category;
+        
+2025-02-01 23:33:12,346 - main.py_2025-02-01_23-33-12.log - INFO -             
+            TRUNCATE TABLE OLAP_ARCHANA_TEMP.category;
+        
+2025-02-01 23:33:12,399 - main.py_2025-02-01_23-33-12.log - INFO - 
+            INSERT INTO OLAP_ARCHANA_TEMP.category
+            SELECT * FROM OLAP_ARCHANA_STG.category;
+        
+2025-02-01 23:33:12,399 - main.py_2025-02-01_23-33-12.log - INFO - 
+            INSERT INTO OLAP_ARCHANA_TEMP.category
+            SELECT * FROM OLAP_ARCHANA_STG.category;
+        
+2025-02-01 23:33:12,401 - main.py_2025-02-01_23-33-12.log - INFO - SET FOREIGN_KEY_CHECKS =0;
+2025-02-01 23:33:12,401 - main.py_2025-02-01_23-33-12.log - INFO - SET FOREIGN_KEY_CHECKS =0;
+2025-02-01 23:33:12,402 - main.py_2025-02-01_23-33-12.log - INFO -             
+            TRUNCATE TABLE OLAP_ARCHANA_TEMP.country;
+        
+2025-02-01 23:33:12,402 - main.py_2025-02-01_23-33-12.log - INFO -             
+            TRUNCATE TABLE OLAP_ARCHANA_TEMP.country;
+        
+2025-02-01 23:33:12,426 - main.py_2025-02-01_23-33-12.log - INFO - 
+            INSERT INTO OLAP_ARCHANA_TEMP.country
+            SELECT * FROM OLAP_ARCHANA_STG.country;
+        
+2025-02-01 23:33:12,426 - main.py_2025-02-01_23-33-12.log - INFO - 
+            INSERT INTO OLAP_ARCHANA_TEMP.country
+            SELECT * FROM OLAP_ARCHANA_STG.country;
+        
+2025-02-01 23:33:12,428 - main.py_2025-02-01_23-33-12.log - INFO - SET FOREIGN_KEY_CHECKS =0;
+2025-02-01 23:33:12,428 - main.py_2025-02-01_23-33-12.log - INFO - SET FOREIGN_KEY_CHECKS =0;
+2025-02-01 23:33:12,428 - main.py_2025-02-01_23-33-12.log - INFO -             
+            TRUNCATE TABLE OLAP_ARCHANA_TEMP.customer;
+        
+2025-02-01 23:33:12,428 - main.py_2025-02-01_23-33-12.log - INFO -             
+            TRUNCATE TABLE OLAP_ARCHANA_TEMP.customer;
+        
+2025-02-01 23:33:12,452 - main.py_2025-02-01_23-33-12.log - INFO - 
+            INSERT INTO OLAP_ARCHANA_TEMP.customer
+            SELECT * FROM OLAP_ARCHANA_STG.customer;
+        
+2025-02-01 23:33:12,452 - main.py_2025-02-01_23-33-12.log - INFO - 
+            INSERT INTO OLAP_ARCHANA_TEMP.customer
+            SELECT * FROM OLAP_ARCHANA_STG.customer;
+        
+2025-02-01 23:33:12,454 - main.py_2025-02-01_23-33-12.log - INFO - SET FOREIGN_KEY_CHECKS =0;
+2025-02-01 23:33:12,454 - main.py_2025-02-01_23-33-12.log - INFO - SET FOREIGN_KEY_CHECKS =0;
+2025-02-01 23:33:12,454 - main.py_2025-02-01_23-33-12.log - INFO -             
+            TRUNCATE TABLE OLAP_ARCHANA_TEMP.subcategory;
+        
+2025-02-01 23:33:12,454 - main.py_2025-02-01_23-33-12.log - INFO -             
+            TRUNCATE TABLE OLAP_ARCHANA_TEMP.subcategory;
+        
+2025-02-01 23:33:12,491 - main.py_2025-02-01_23-33-12.log - INFO - 
+            INSERT INTO OLAP_ARCHANA_TEMP.subcategory
+            SELECT * FROM OLAP_ARCHANA_STG.subcategory;
+        
+2025-02-01 23:33:12,491 - main.py_2025-02-01_23-33-12.log - INFO - 
+            INSERT INTO OLAP_ARCHANA_TEMP.subcategory
+            SELECT * FROM OLAP_ARCHANA_STG.subcategory;
+        
+2025-02-01 23:33:12,493 - main.py_2025-02-01_23-33-12.log - INFO - SET FOREIGN_KEY_CHECKS =0;
+2025-02-01 23:33:12,493 - main.py_2025-02-01_23-33-12.log - INFO - SET FOREIGN_KEY_CHECKS =0;
+2025-02-01 23:33:12,493 - main.py_2025-02-01_23-33-12.log - INFO -             
+            TRUNCATE TABLE OLAP_ARCHANA_TEMP.product;
+        
+2025-02-01 23:33:12,493 - main.py_2025-02-01_23-33-12.log - INFO -             
+            TRUNCATE TABLE OLAP_ARCHANA_TEMP.product;
+        
+2025-02-01 23:33:12,536 - main.py_2025-02-01_23-33-12.log - INFO - 
+            INSERT INTO OLAP_ARCHANA_TEMP.product
+            SELECT * FROM OLAP_ARCHANA_STG.product;
+        
+2025-02-01 23:33:12,536 - main.py_2025-02-01_23-33-12.log - INFO - 
+            INSERT INTO OLAP_ARCHANA_TEMP.product
+            SELECT * FROM OLAP_ARCHANA_STG.product;
+        
+2025-02-01 23:33:12,539 - main.py_2025-02-01_23-33-12.log - INFO - SET FOREIGN_KEY_CHECKS =0;
+2025-02-01 23:33:12,539 - main.py_2025-02-01_23-33-12.log - INFO - SET FOREIGN_KEY_CHECKS =0;
+2025-02-01 23:33:12,539 - main.py_2025-02-01_23-33-12.log - INFO -             
+            TRUNCATE TABLE OLAP_ARCHANA_TEMP.region;
+        
+2025-02-01 23:33:12,539 - main.py_2025-02-01_23-33-12.log - INFO -             
+            TRUNCATE TABLE OLAP_ARCHANA_TEMP.region;
+        
+2025-02-01 23:33:12,577 - main.py_2025-02-01_23-33-12.log - INFO - 
+            INSERT INTO OLAP_ARCHANA_TEMP.region
+            SELECT * FROM OLAP_ARCHANA_STG.region;
+        
+2025-02-01 23:33:12,577 - main.py_2025-02-01_23-33-12.log - INFO - 
+            INSERT INTO OLAP_ARCHANA_TEMP.region
+            SELECT * FROM OLAP_ARCHANA_STG.region;
+        
+2025-02-01 23:33:12,580 - main.py_2025-02-01_23-33-12.log - INFO - SET FOREIGN_KEY_CHECKS =0;
+2025-02-01 23:33:12,580 - main.py_2025-02-01_23-33-12.log - INFO - SET FOREIGN_KEY_CHECKS =0;
+2025-02-01 23:33:12,580 - main.py_2025-02-01_23-33-12.log - INFO -             
+            TRUNCATE TABLE OLAP_ARCHANA_TEMP.store;
+        
+2025-02-01 23:33:12,580 - main.py_2025-02-01_23-33-12.log - INFO -             
+            TRUNCATE TABLE OLAP_ARCHANA_TEMP.store;
+        
+2025-02-01 23:33:12,623 - main.py_2025-02-01_23-33-12.log - INFO - 
+            INSERT INTO OLAP_ARCHANA_TEMP.store
+            SELECT * FROM OLAP_ARCHANA_STG.store;
+        
+2025-02-01 23:33:12,623 - main.py_2025-02-01_23-33-12.log - INFO - 
+            INSERT INTO OLAP_ARCHANA_TEMP.store
+            SELECT * FROM OLAP_ARCHANA_STG.store;
+        
+2025-02-01 23:33:12,625 - main.py_2025-02-01_23-33-12.log - INFO - SET FOREIGN_KEY_CHECKS =0;
+2025-02-01 23:33:12,625 - main.py_2025-02-01_23-33-12.log - INFO - SET FOREIGN_KEY_CHECKS =0;
+2025-02-01 23:33:12,625 - main.py_2025-02-01_23-33-12.log - INFO -             
+            TRUNCATE TABLE OLAP_ARCHANA_TEMP.sales;
+        
+2025-02-01 23:33:12,625 - main.py_2025-02-01_23-33-12.log - INFO -             
+            TRUNCATE TABLE OLAP_ARCHANA_TEMP.sales;
+        
+2025-02-01 23:33:12,668 - main.py_2025-02-01_23-33-12.log - INFO - 
+            INSERT INTO OLAP_ARCHANA_TEMP.sales
+            SELECT * FROM OLAP_ARCHANA_STG.sales;
+        
+2025-02-01 23:33:12,668 - main.py_2025-02-01_23-33-12.log - INFO - 
+            INSERT INTO OLAP_ARCHANA_TEMP.sales
+            SELECT * FROM OLAP_ARCHANA_STG.sales;
+        
+2025-02-01 23:33:31,725 - main.py_2025-02-01_23-33-12.log - INFO - SET FOREIGN_KEY_CHECKS = 1;
+2025-02-01 23:33:31,725 - main.py_2025-02-01_23-33-12.log - INFO - SET FOREIGN_KEY_CHECKS = 1;
+2025-02-01 23:33:31,726 - main.py_2025-02-01_23-33-12.log - INFO - Connection closed.
+2025-02-01 23:33:31,726 - main.py_2025-02-01_23-33-12.log - INFO - Connection closed.
+2025-02-01 23:33:31,726 - main.py_2025-02-01_23-33-12.log - INFO - Connection closed.
+2025-02-01 23:33:31,726 - main.py_2025-02-01_23-33-12.log - INFO - Connection closed.
